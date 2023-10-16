@@ -1,16 +1,16 @@
 #include "main.h"
 
 /**
- * print_hex - prints unsigned hex numbers in lowercase
- * @ap: the argument pointer
- * @params: the parameters struct
+ * print_hex - lowercase unsigned hex numbers
+ * @ap: args pointer
+ * @params: struct parameters
  *
  * Return: bytes printed
  */
 int print_hex(va_list ap, params_t *params)
 {
 	unsigned long l;
-	int c = 0;
+	int count = 0;
 	char *str;
 
 	if (params->l_modifier)
@@ -27,20 +27,20 @@ int print_hex(va_list ap, params_t *params)
 		*--str = '0';
 	}
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (count += print_number(str, params));
 }
 
 /**
- * print_HEX - prints unsigned hex numbers in uppercase
- * @ap: the argument pointer
- * @params: the parameters struct
+ * print_HEX - uppercase unsigned hex numbers
+ * @ap: args pointer
+ * @params: struct parameters
  *
  * Return: bytes printed
  */
 int print_HEX(va_list ap, params_t *params)
 {
 	unsigned long l;
-	int c = 0;
+	int count = 0;
 	char *str;
 
 	if (params->l_modifier)
@@ -57,39 +57,39 @@ int print_HEX(va_list ap, params_t *params)
 		*--str = '0';
 	}
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (count += print_number(str, params));
 }
 /**
- * print_binary - prints unsigned binary number
- * @ap: the argument pointer
- * @params: the parameters struct
+ * print_binary - unsigned binary num
+ * @ap: args pointer
+ * @params: struct params
  *
- * Return: bytes printed
+ * Return: printed bytes
  */
 int print_binary(va_list ap, params_t *params)
 {
-	unsigned int n = va_arg(ap, unsigned int);
-	char *str = convert(n, 2, CONVERT_UNSIGNED, params);
-	int c = 0;
+	unsigned int num = va_arg(ap, unsigned int);
+	char *str = convert(num, 2, CONVERT_UNSIGNED, params);
+	int count = 0;
 
-	if (params->hashtag_flag && n)
+	if (params->hashtag_flag && num)
 		*--str = '0';
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (count += print_number(str, params));
 }
 
 /**
- * print_octal - prints unsigned octal numbers
- * @ap: the argument pointer
- * @params: the parameters struct
+ * print_octal - unsigned octal numbers
+ * @ap: args pointer
+ * @params: struct params
  *
- * Return: bytes printed
+ * Return: printed bytes
  */
 int print_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
 	char *str;
-	int c = 0;
+	int count = 0;
 
 	if (params->l_modifier)
 		l = (unsigned long)va_arg(ap, unsigned long);
@@ -102,5 +102,5 @@ int print_octal(va_list ap, params_t *params)
 	if (params->hashtag_flag && l)
 		*--str = '0';
 	params->unsign = 1;
-	return (c += print_number(str, params));
+	return (count += print_number(str, params));
 }
