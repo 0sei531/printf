@@ -1,36 +1,36 @@
 #include "main.h"
 
 /**
- * print_from_to - prints a range of char addresses
- * @start: starting address
- * @stop: stopping address
- * @except: except address
+ * print_from_to - print range of char addr
+ * @start: first addr
+ * @stop: last addr
+ * @except: excepted addr
  *
- * Return: number bytes printed
+ * Return: bytes printed
  */
 int print_from_to(char *start, char *stop, char *except)
 {
-	int sum = 0;
+	int total = 0;
 
 	while (start <= stop)
 	{
 		if (start != except)
-			sum += _putchar(*start);
+			total += _putchar(*start);
 		start++;
 	}
-	return (sum);
+	return (total);
 }
 
 /**
- * print_rev - prints string in reverse
- * @ap: string
- * @params: the parameters struct
+ * print_rev - reverse string
+ * @ap: strings to be printed
+ * @params: struct parameters
  *
- * Return: number bytes printed
+ * Return: bytes printed
  */
 int print_rev(va_list ap, params_t *params)
 {
-	int len, sum = 0;
+	int len, total = 0;
 	char *str = va_arg(ap, char *);
 	(void)params;
 
@@ -40,40 +40,40 @@ int print_rev(va_list ap, params_t *params)
 			len++;
 		str--;
 		for (; len > 0; len--, str--)
-			sum += _putchar(*str);
+			total += _putchar(*str);
 	}
-	return (sum);
+	return (total);
 }
 
 /**
- * print_rot13 - prints string in rot13
- * @ap: string
- * @params: the parameters struct
+ * print_rot13 - rot13 strings
+ * @ap: strings
+ * @params: struct parameters
  *
- * Return: number bytes printed
+ * Return: bytes printed
  */
 int print_rot13(va_list ap, params_t *params)
 {
-	int i, index;
+	int in, ind;
 	int count = 0;
 	char arr[] =
 		"NOPQRSTUVWXYZABCDEFGHIJKLM      nopqrstuvwxyzabcdefghijklm";
 	char *a = va_arg(ap, char *);
 	(void)params;
 
-	i = 0;
-	index = 0;
-	while (a[i])
+	in = 0;
+	ind = 0;
+	while (a[in])
 	{
-		if ((a[i] >= 'A' && a[i] <= 'Z')
-		    || (a[i] >= 'a' && a[i] <= 'z'))
+		if ((a[in] >= 'A' && a[in] <= 'Z')
+		    || (a[in] >= 'a' && a[in] <= 'z'))
 		{
-			index = a[i] - 65;
-			count += _putchar(arr[index]);
+			ind = a[in] - 65;
+			count += _putchar(arr[ind]);
 		}
 		else
-			count += _putchar(a[i]);
-		i++;
+			count += _putchar(a[in]);
+		in++;
 	}
 	return (count);
 }
