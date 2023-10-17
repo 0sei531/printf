@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * get_print - get_print function for _printf
- * @s: chars specifier
- * Return: _printf pointer function
+ * get_print - _printf get print function
+ * @s: char specifier
+ * Description: function loops for structs array
+ * Return: pointer function
  */
 int (*get_print(char s))(va_list, flags_t *)
 {
@@ -25,10 +26,10 @@ int (*get_print(char s))(va_list, flags_t *)
 		};
 	int flags = 14;
 
-	register int value;
+	register int i;
 
-	for (value = 0; value < flags; value++)
-		if (func_arr[value].c == s)
-			return (func_arr[value].f);
+	for (i = 0; i < flags; i++)
+		if (func_arr[i].c == s)
+			return (func_arr[i].f);
 	return (NULL);
 }
