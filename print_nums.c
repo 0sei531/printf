@@ -2,9 +2,9 @@
 
 /**
  * print_int - print integer
- * @l: va_list args
- * @f: pointer flags
- * Return: numbers of printed char
+ * @l: va_list of args
+ * @f: pointer structure
+ * Return: char printed
  */
 int print_int(va_list l, flags_t *f)
 {
@@ -22,11 +22,10 @@ int print_int(va_list l, flags_t *f)
 }
 
 /**
- * print_unsigned - prints an unsigned integer
- * @l: va_list of arguments from _printf
- * @f: pointer to the struct flags determining
- * if a flag is passed to _printf
- * Return: number of char printed
+ * print_unsigned - print unsigned integer
+ * @l: va_list of args
+ * @f: pointer structure
+ * Return: char printed
  */
 int print_unsigned(va_list l, flags_t *f)
 {
