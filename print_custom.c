@@ -1,40 +1,36 @@
 #include "main.h"
 
 /**
- * print_bigS - Non printable characters
- * (0 < ASCII value < 32 or >= 127) are
- * printed this way: \x, followed by the ASCII code
- * value in hexadecimal (upper case - always 2 characters)
- * @l: va_list arguments from _printf
- * @f: pointer to the struct flags that determines
- * if a flag is passed to _printf
- * Return: number of char printed
+ * print_upper - print uppercase ASCII char
+ * @l: va_list args
+ * @f: pointer structure
+ * Return: values of printed char
  */
 int print_bigS(va_list l, flags_t *f)
 {
-	int i, count = 0;
-	char *res;
-	char *s = va_arg(l, char *);
+	int input, value = 0;
+	char *r;
+	char *str = va_arg(l, char *);
 
 	(void)f;
-	if (!s)
+	if (!str)
 		return (_puts("(null)"));
 
-	for (i = 0; s[i]; i++)
+	for (input = 0; str[i]; i++)
 	{
-		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
+		if (str[input] > 0 && (str[input] < 32 || str[input] >= 127))
 		{
 			_puts("\\x");
-			count += 2;
-			res = convert(s[i], 16, 0);
-			if (!res[1])
-				count += _putchar('0');
-			count += _puts(res);
+			value += 2;
+			r = convert(str[input], 16, 0);
+			if (!r[1])
+				value += _putchar('0');
+			value += _puts(r);
 		}
 		else
-			count += _putchar(s[i]);
+			value += _putchar(str[input]);
 	}
-	return (count);
+	return (value);
 }
 
 /**
@@ -95,7 +91,7 @@ int print_rot13(va_list l, flags_t *f)
 }
 
 /**
- * print_percent - prints a percent
+ * print_percent - print percent
  * @l: va_list arguments from _printf
  * @f: pointer to the struct flags in which we turn the flags on
  * Return: number of char printed
