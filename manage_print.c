@@ -18,7 +18,7 @@ int fn_print(const char *fmt, int *ind, va_list list, char buffer[],
 	fmt_t fmt_types[] = {
 		{'c', pr_char}, {'s', pr_str}, {'%', pr_percent},
 		{'i', print_int}, {'d', print_int}, {'b', pr_bin},
-		{'u', pr_unsigned}, {'o', pr_octal}, {'x', pri_hexadex},
+		{'u', pr_unsigned}, {'o', pr_octal}, {'x', pr_hexadex},
 		{'X', pr_hex_upper}, {'p', pr_ptr}, {'S', pr_unprintable},
 		{'r', pr_rev}, {'R', pr_rot13str}, {'\0', NULL}
 	};
@@ -45,5 +45,5 @@ int fn_print(const char *fmt, int *ind, va_list list, char buffer[],
 		unknow_len += write(1, &fmt[*ind], 1);
 		return (unknow_len);
 	}
-	return (printed_chars);
+	return (pr_char);
 }
