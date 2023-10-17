@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _printf - printf function
- * @format: formated string for chars and
- * Return: length of the formatted string
+ * _printf - _printf function
+ * @format: formated strings
+ * Description: get_printf function
+ * Return: formatted string len
  */
 int _printf(const char *format, ...)
 {
