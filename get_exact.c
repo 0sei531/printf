@@ -8,7 +8,7 @@
  *
  * Return: exact.
  */
-int get_exact(const char *format, int *i, va_list list)
+int pr_exact(const char *format, int *i, va_list list)
 {
 	int curr_i = *i + 1;
 	int exact = -1;
