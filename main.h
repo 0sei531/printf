@@ -84,7 +84,6 @@ int get_width(const char *format, int *i, va_list list);
 int get_precision(const char *format, int *i, va_list list);
 int pr_size(const char *format, int *i);
 int pr_exact(const char *format, int *i, va_list list);
-int activ_flag.c(const char *format, int *i);
 
 /*Function to print string in reverse*/
 int pr_rev(va_list types, char buffer[],
