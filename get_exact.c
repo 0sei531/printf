@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * get_exact - Calculates the precision for printing
- * @format: Formatted string in which to print the arguments
- * @i: List of arguments to be printed.
+ * get_exact - precision to printing
+ * @format: Formatted string 
+ * @i: arguments to be printed.
  * @list: list of arguments.
  *
  * Return: exact.
  */
-int get_exact(const char *format, int *i, va_list list)
+int get_abs(const char *format, int *i, va_list list)
 {
 	int curr_i = *i + 1;
 	int exact = -1;
