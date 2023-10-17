@@ -1,27 +1,27 @@
 #include "main.h"
 
 /**
- * print_string - loop and print char
+ * print_string - print string function
  * @l: va_list args
- * @f: struct flags
+ * @f: pointer structure
  * Return: char printed
  */
 int print_string(va_list l, flags_t *f)
 {
-	char *str = va_arg(l, char *);
+	char *s = va_arg(l, char *);
 
 	(void)f;
 
-	if (!str)
-		str = "(null)";
-	return (_puts(str));
+	if (!s)
+		s = "(null)";
+	return (_puts(s));
 }
 
 /**
- * print_char - print char
- * @l: va_list args
- * @f: struct flags
- * Return: printed char
+ * print_char - print character
+ * @l: va_list arguments
+ * @f: pointer structure
+ * Return: char printed
  */
 int print_char(va_list l, flags_t *f)
 {
