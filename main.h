@@ -58,24 +58,24 @@ int print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_unsigned(va_list types, char buffer[],
+int pr_unsigned(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_octal(va_list types, char buffer[],
+int pr_octal(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexadecimal(va_list types, char buffer[],
+int pr_hexadex(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-int print_hexa_upper(va_list types, char buffer[],
+int pr_hex_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
-int print_hexa(va_list types, char map_to[],
+int pr_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 
 /* Function to print non printable characters */
-int print_non_printable(va_list types, char buffer[],
+int pr_unprintable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Funcion to print memory address */
-int print_pointer(va_list types, char buffer[],
+int pr_ptr(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* Funciotns to handle other specifiers */
@@ -85,11 +85,11 @@ int get_precision(const char *format, int *i, va_list list);
 int get_size(const char *format, int *i);
 
 /*Function to print string in reverse*/
-int print_reverse(va_list types, char buffer[],
+int pr_rev(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /*Function to print a string in rot 13*/
-int print_rot13string(va_list types, char buffer[],
+int pr_rot13str(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 
 /* width handler */
