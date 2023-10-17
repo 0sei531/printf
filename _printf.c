@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 
 	va_end(list);
 
-	return (pr_char);
+	return (printed_chars);
 }
 
 /**
