@@ -1,27 +1,26 @@
 #include "main.h"
 
 /**
- * convert - convert base and number to string
- * @num: input
+ * convert - change number and base to string
+ * @num: num
  * @base: base
- * @lowercase: lowercase flag in hexa values
- * Return: formated string
+ * Return: string
  */
 char *convert(unsigned long int num, int base, int lowercase)
 {
-	char *p;
-	static char *r;
+	static char *rep;
 	static char buffer[50];
-	
-	r = (lowercase)
+	char *ptr;
+
+	rep = (lowercase)
 		? "0123456789abcdef"
 		: "0123456789ABCDEF";
-	p = &buffer[49];
-	*p = '\0';
+	ptr = &buffer[49];
+	*ptr = '\0';
 	do {
-		*--p = r[num % base];
+		*--ptr = rep[num % base];
 		num /= base;
 	} while (num != 0);
 
-	return (p);
+	return (ptr);
 }
