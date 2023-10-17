@@ -6,7 +6,7 @@
  * @i: input parameter.
  * Return: Flags:
  */
-int activ_flag.c(const char *format, int *i)
+int activ_flags(const char *format, int *i)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
