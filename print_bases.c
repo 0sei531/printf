@@ -1,70 +1,80 @@
 #include "main.h"
 
 /**
- * print_hex_lower - print lowercase hexa number
+ * print_hex - lowercase number in hexadecimal
  * @l: va_list args
- * @f: struct flags
- * Return: printed char
+ * @f: pointer structure
+ * Description: conveter function to converts input
+ * number to valid base and returns it as a string
+ * Return: number of char printed
  */
 int print_hex(va_list l, flags_t *f)
 {
-	int value = 0;
-	unsigned int n = va_arg(l, unsigned int);
-	char *s = convert(n, 16, 1);
-	
+	unsigned int num = va_arg(l, unsigned int);
+	char *str = convert(num, 16, 1);
+	int count = 0;
+
 	if (f->hash == 1 && str[0] != '0')
-		value += _puts("0x");
-	value += _puts(s);
-	return (value);
+		count += _puts("0x");
+	count += _puts(str);
+	return (count);
 }
 
 /**
- * print_hex_upper - print uppercase hexa number
+ * print_hex_upper - uppercase hexa number
  * @l: va_list args
- * @f: struct flags
- * Return: printed char
+ * @f: pointer structure
+ * Description: converter function to converts input
+ * to base and returns it as a string
+ * Return: number of char printed
  */
 int print_hex_big(va_list l, flags_t *f)
 {
-	int value = 0;
-	unsigned int n = va_arg(l, unsigned int);
-	char *s = convert(n, 16, 0);
-	
+	unsigned int num = va_arg(l, unsigned int);
+	char *str = convert(num, 16, 0);
+	int count = 0;
+
 	if (f->hash == 1 && str[0] != '0')
-		value += _puts("0X");
-	value += _puts(s);
-	return (value);
+		count += _puts("0X");
+	count += _puts(str);
+	return (count);
 }
 
 /**
- * print_binary - print binary number
- * @l: va_list args
- * @f: struct pointer
- * Return: values of printed char
+ * print_binary - prints a number in base 2
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct that determines
+ * if a flag is passed to _printf
+ * Description: the function calls convert() which in turns converts the input
+ * number into the correct base and returns it as a string
+ * Return: the number of char printed
  */
 int print_binary(va_list l, flags_t *f)
 {
-	unsigned int n = va_arg(l, unsigned int);
-	char *s = convert(n, 2, 0);
+	unsigned int num = va_arg(l, unsigned int);
+	char *str = convert(num, 2, 0);
 
 	(void)f;
-	return (_puts(s));
+	return (_puts(str));
 }
 
 /**
- * print_octal - prints octal number
- * @l: va_list args
- * @f: pointer structure
- * Return: values of char printed
+ * print_octal - prints a number in base 8
+ * @l: va_list arguments from _printf
+ * @f: pointer to the struct that determines
+ * if a flag is passed to _printf
+ * Description: the function calls convert() which in turns converts the input
+ * number into the correct base and returns it as a string
+ * Return: the number of char printed
  */
 int print_octal(va_list l, flags_t *f)
 {
-	int value = 0;
-	unsigned int n = va_arg(l, unsigned int);
-	char *s = convert(n, 8, 0);
-	
+	unsigned int num = va_arg(l, unsigned int);
+	char *str = convert(num, 8, 0);
+	int count = 0;
+
 	if (f->hash == 1 && str[0] != '0')
-		value += _putchar('0');
-	value += _puts(s);
-	return (value);
+		count += _putchar('0');
+	count += _puts(str);
+	return (count);
 }
