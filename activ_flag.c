@@ -3,7 +3,7 @@
 /**
  * activ_flag.c - active flags
  * @format: Formatted string to print the arguments
- * @i: take a parameter.
+ * @i: input parameter.
  * Return: Flags:
  */
 int activ_flag.c(const char *format, int *i)
