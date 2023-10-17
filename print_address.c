@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * print_address - print hexa address
+ * print_address - prints address in hexa
  * @l: va_list args
- * @f: struct flags
- * Return: printed char
+ * @f: pointer struct
+ * Return: char printed
  */
 int print_address(va_list l, flags_t *f)
 {
-	char *s;
-	unsigned long int pt = va_arg(l, unsigned long int);
+	char *str;
+	unsigned long int p = va_arg(l, unsigned long int);
 
-	register int value = 0;
+	register int count = 0;
 
 	(void)f;
 
-	if (!pt)
+	if (!p)
 		return (_puts("(nil)"));
-	s = convert(pt, 16, 1);
-	value += _puts("0x");
-	value += _puts(s);
-	return (value);
+	str = convert(p, 16, 1);
+	count += _puts("0x");
+	count += _puts(str);
+	return (count);
 }
