@@ -52,6 +52,7 @@ int pr_str(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int pr_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+int activ_flags(const char *format, int *i);
 
 /* Functions to print numbers */
 int pr_int(va_list types, char buffer[],
