@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * get_width - Cal width
- * @format: Formatted string to print the arguments.
- * @i: List of arguments to be printed.
+ * get_width - width
+ * @format: Formatted string
+ * @i: arguments.
  * @list: list of arguments.
  *
  * Return: width.
