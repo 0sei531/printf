@@ -1,26 +1,26 @@
 #include "main.h"
 /**
- * handle_print - Prints an argument based on its type
- * @fmt: Formatted string in which to print the arguments.
- * @list: List of arguments to be printed.
+ * handle_print - argument type.
+ * @fmt: Formatted string.
+ * @list: List of arguments.
  * @ind: ind.
- * @buffer: Buffer array to handle print.
- * @flags: Calculates active flags
- * @width: get width.
+ * @buffer: Buffer array.
+ * @flags: active flags
+ * @width: width.
  * @precision: Precision specification
- * @size: Size specifier
- * Return: 1 or 2;
+ * @size: Size
+ * Return: 1;
  */
-int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
+int fn_print(const char *fmt, int *ind, va_list list, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	int i, unknow_len = 0, printed_chars = -1;
 	fmt_t fmt_types[] = {
-		{'c', print_char}, {'s', print_string}, {'%', print_percent},
-		{'i', print_int}, {'d', print_int}, {'b', print_binary},
-		{'u', print_unsigned}, {'o', print_octal}, {'x', print_hexadecimal},
-		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
-		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+		{'c', pr_char}, {'s', pr_str}, {'%', pr_percent},
+		{'i', print_int}, {'d', print_int}, {'b', pr_bin},
+		{'u', pr_unsigned}, {'o', pr_octal}, {'x', pri_hexadex},
+		{'X', pr_hex_upper}, {'p', pr_ptr}, {'S', pr_unprintable},
+		{'r', pr_rev}, {'R', pr_rot13str}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 		if (fmt[*ind] == fmt_types[i].fmt)
