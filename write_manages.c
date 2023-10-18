@@ -3,8 +3,8 @@
 /************************* WRITE HANDLE *************************/
 /**
  * wr_char - Prints a string
- * @c: char 
- * @buffer: Buffer array 
+ * @c: char
+ * @buffer: Buffer array
  * @flags:  active flags.
  * @width: width.
  * @precision: precision
@@ -14,7 +14,7 @@
  */
 int wr_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
-{ 
+{
 	int i = 0;
 	char padd = ' ';
 
@@ -78,7 +78,7 @@ int wr_number(int is_negative, int ind, char buffer[],
 }
 
 /**
- * write_num - Write a number 
+ * write_num - Write a number
  * @ind: Index at which the number starts on the buffer
  * @buffer: Buffer
  * @flags: Flags
@@ -141,10 +141,10 @@ int write_num(int ind, char buffer[],
  * @is_negative: num is negative
  * @ind: Index
  * @buffer: Array of chars
- * @flags: Flags 
- * @width: Width 
+ * @flags: Flags
+ * @width: Width
  * @precision: Precision
- * @size: Size 
+ * @size: Size
  *
  * Return: Number of written chars.
  */
@@ -152,7 +152,6 @@ int wr_unsignd(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
 {
-	
 	int length = BUFF_SIZE - ind - 1, i = 0;
 	char padd = ' ';
 
@@ -200,11 +199,10 @@ int wr_unsignd(int is_negative, int ind,
  * @ind: Index buffer
  * @length: Length
  * @width: Wwidth 
- * @flags: Flags 
+ * @flags: Flags
  * @padd: Char padding
  * @extra_c: extra char
- * @padd_start: Index 
- *
+ * @padd_start: Index
  * Return: Number.
  */
 int wr_ptr(char buffer[], int ind, int length,
