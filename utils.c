@@ -2,7 +2,7 @@
 
 /**
  * printable - printable
- * @c: Char 
+ * @c: Char
  *
  * Return: 1, else 0
  */
