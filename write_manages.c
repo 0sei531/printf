@@ -198,7 +198,7 @@ int wr_unsignd(int is_negative, int ind,
  * @buffer: Arrays of chars
  * @ind: Index buffer
  * @length: Length
- * @width: Wwidth 
+ * @width: Wwidth
  * @flags: Flags
  * @padd: Char padding
  * @extra_c: extra char
