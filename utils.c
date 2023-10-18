@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * is_printable -  printable
+ * printable - printable
  * @c: Char 
  *
  * Return: 1, else 0
@@ -15,7 +15,7 @@ int printable(char c)
 }
 
 /**
- * append_hexa_code - Append ascci in hexadecimal code to buffer
+ * app_hexa - Append ascci in hexadecimal code to buffer
  * @buffer: Array of chars.
  * @i: Index at which to start appending.
  * @ascii_code: ASSCI CODE.
@@ -38,7 +38,7 @@ int app_hexa(char ascii_code, char buffer[], int i)
 }
 
 /**
- * is_digit - Verifies if a char is a digit
+ * pr_digit - Verifies if a char is a digit
  * @c: Char to be evaluated
  *
  * Return: 1 if c is a digit, 0 otherwise
@@ -52,7 +52,7 @@ int pr_digit(char c)
 }
 
 /**
- * convert_size_number - Casts a number to the specified size
+ * pr_size_num - Casts a number to the specified size
  * @num: Number to be casted.
  * @size: Number indicating the type to be casted.
  *
@@ -69,7 +69,7 @@ long int pr_size_num(long int num, int size)
 }
 
 /**
- * convert_size_unsgnd - Casts a number to the specified size
+ * pr_size_unsgnd - Casts a number to the specified size
  * @num: Number to be casted
  * @size: Number indicating the type to be casted
  *
