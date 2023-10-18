@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_size - print size 
+ * pr_size - print size
  * @format: Formatted string
  * @i: arguments to be printed.
  *
